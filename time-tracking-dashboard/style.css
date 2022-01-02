@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Rubik:wght@300;400;500&family=Ubuntu:wght@500&display=swap');
+
+:root {
+    --long: hsl(246, 80%, 60%);
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+
+    --vd-blue: hsl(226, 43%, 10%);
+    --d-blue: hsl(235, 46%, 20%);
+    --ds-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+
+    --fs-title: 18px;
+  }
+
+body{
+    background-color: var(--vd-blue);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Rubik';
+}
+
+.container{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 12rem);
+    margin-inline: auto;
+}
+
+.all{
+    border-radius: 12px;
+}
+
+#second{
+    background-color: var(--work);
+}
+#third{
+    background-color: var(--play);
+}
+#fourth{
+    background-color: var(--study);
+}
+#fifth{
+    background-color: var(--exercise);
+}
+#sixth{
+    background-color: var(--social);
+}
+#seventh{
+    background-color: var(--self-care);
+}
+
+.jeremy-img{
+    width: 60px;
+    border-radius: 50%;
+    border: 2.5px solid white;
+    margin-top: 2em;
+    margin-left: 1.2em;
+}
+
+.one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 1.5rem;
+    color: white;
+}
+
+.two{
+    color: white;
+    margin: 0 0 0 1.5rem;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.three{
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+    color: var(--pale-blue);
+    font-size: 0.75rem;
+}
+
+.dot{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.short{
+    height: 12rem;
+}
+
+.long{
+    background-color: var(--d-blue);
+    grid-row: 1/ span 2;
+}
+
+.long-top{
+    background-color: var(--long);
+    border-radius: 10px;
+    height: 67%;
+}
+.long-bottom{
+    display: flex;
+    background-color: var(--d-blue);
+    flex-direction: column;
+    justify-content: center;
+    height: 33%;
+    border-radius: 10px;
+}
+
+.short-top{
+    border-radius: 10px 10px 0 0;
+    height: 20%;
+}
+
+.short-bottom{
+    height: 80%;
+    border-radius: 10px;
+    position: relative;
+    background-color: var(--d-blue);
+    z-index: 1;
+}
+
+.report{
+    margin-top: 2rem;
+    margin-bottom: -0.05rem;
+    font-size: 0.7rem;
+    color: var(--pale-blue);
+}
+
+.long-top p{
+    margin-left: 1.2rem;
+}
+
+.long-bottom a{
+    margin-left: 1.2rem;
+    color: var(--ds-blue);
+    text-decoration: none;
+}
+
+.daily{
+    margin-bottom: 1.2rem;
+}
+
+.monthly{
+    margin-top: 1.2rem;
+}
+
+.jeremy-text{
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 300;
+}
+
+.icon{
+    z-index: 0;
+}
+
+.icon1, .icon2, .icon3{
+    width: 3.75rem;
+    margin-left: 7rem;
+    margin-top: -0.2rem;
+}
+
+.icon4, .icon5{
+    width: 4rem;
+    margin-left: 7rem;
+}
+
+.icon1{
+    margin-top: -0.3rem;
+}
+
+.icon6{
+    margin-top: -0.5rem;
+    margin-left: 7.5rem;
+    width: 3.5rem;
+}
+
+.icon-bg-1{
+    background-color: var(--work);
+}
+.icon-bg-2{
+    background-color: var(--play);
+}
+.icon-bg-3{
+    background-color: var(--study);
+}
+.icon-bg-4{
+    background-color: var(--exercise);
+}
+.icon-bg-5{
+    background-color: var(--social);
+}
+.icon-bg-6{
+    background-color: var(--self-care);
+}
+
+.daily{
+    margin-top: 0;
+}
+
+.long-bottom a:hover{
+    color: white !important;
+    cursor: pointer;
+}
+
+.dot img:hover{
+    filter: brightness(100);
+    cursor: pointer;
+}
+
+.short-bottom:hover{
+    background-color: var(--ds-blue);
+    cursor: pointer;
+}
+.short::before{
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12rem;
+    background-color: var(--vd-blue);
+    transform: translateY(-12px);
+}
+
+.attribution { 
+    display: block;
+    position: absolute;
+    width: 100vw;
+    font-size: 11px; 
+    text-align: center; 
+    bottom: 1.25rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+    text-decoration: none;
+}
+
+.attribution a:hover { 
+    color: white; 
+    text-decoration: none;
+}
+
+.attribution a:active { 
+    color: white; 
+}
+
+.attribution span{
+    color: var(--pale-blue);
+}
+
+.long-bottom a:nth-child(2){
+    color: white;
+}
+
+@media (max-width: 376px){
+    .container{
+        grid-template-columns: 80vw;
+    }
+    body{
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .long{
+        height: fit-content;
+        block-size: fit-content;
+    }
+    .long-top{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    .jeremy-img{
+        grid-row: 1/ span 2;
+        margin: 5vh 0 5vh 4vh;
+    }
+    .report{
+        font-size: 3.2vw;
+        transform: translateY(13px);
+    }
+    .jeremy-text{
+        font-size: 5.25vw;
+        transform: translateY(-15px);
+    }
+    .long-bottom{
+        display: flex;
+        flex-direction: row;
+        height: 8vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5vh;
+    }
+    .long-bottom a{
+        margin: 0;
+    }
+    .short{
+        height: 20vh;
+    }
+    .short-bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .one{
+        grid-column: 1/ span 2;
+    }
+    .field, .two, .three{
+        display: flex;
+        align-items: center;
+    }
+    .two{
+        font-size: 7.5vw;
+    }
+    .two, .three{
+        height: 5vh;
+        margin-top: -2vh;
+        margin-bottom: 0;
+    }
+    .screen::before, .screen::after{
+        height: 0;
+        width: 0;
+    }
+    .screen{
+        margin: 12vh 0;
+    }
+    
+    .icon1, .icon2, .icon3{
+        width: 3.75rem;
+        margin-left: 13rem;
+        margin-top: -0.2rem;
+    }
+    .icon4, .icon5{
+        width: 4rem;
+        margin-left: 12.75rem;
+    }
+    
+    .icon1{
+        margin-top: -0.3rem;
+    }
+    
+    .icon5{
+        margin-top: -0.8rem;
+    }
+    
+    .icon6{
+        margin-top: -0.5rem;
+        margin-left: 13.5rem;
+        width: 3.5rem;
+    }
+    .attribution{
+        top: 182vh;
+    }
+    .short::before{
+        width: 80vw;
+    }
+}
