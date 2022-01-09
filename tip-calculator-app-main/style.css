@@ -7,6 +7,7 @@
     --dg-cyan-2: hsl(184, 14%, 56%);
     --lg-cyan: hsl(185, 41%, 84%);
     --lg-cyan-2: hsl(189, 41%, 97%);
+    --red: rgb(218, 59, 59);
 }
 
 *{
@@ -74,9 +75,22 @@ img{
     transform: translateX(0.67em);
 }
 
+.peeps{
+    display: flex;
+    justify-content: space-between;
+}
+
 .left-text{
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
+}
+
+.message{
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    color: var(--red);
 }
 
 .icon{
@@ -207,7 +221,7 @@ input[type=text]:focus {
     }
     .container{
         margin: 0;
-        top: auto;
+        top: 15vh;
         bottom: 0;
     }
 }
