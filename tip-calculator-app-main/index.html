@@ -28,16 +28,19 @@
         </div>
         <p class="left-text select-tip">Select Tip %</p>
         <div class="tips" id="tip_percent">
-          <a href="#" onclick="five();" class="percent five" id="five">5%</a>
-          <a href="#" onclick="ten();" class="percent ten" id="ten">10%</a>
-          <a href="#" onclick="fifteen();" class="percent fifteen" id="fifteen">15%</a>
-          <a href="#" onclick="t_five();" class="percent t-five" id="t_five">25%</a>
-          <a href="#" onclick="fifty();" class="percent fifty" id="fifty">50%</a>
+          <a href="#" onclick="selectPercent('five', 0.05)" class="percent five" id="five">5%</a>
+          <a href="#" onclick="selectPercent('ten', 0.1)" class="percent ten" id="ten">10%</a>
+          <a href="#" onclick="selectPercent('fifteen', 0.15)" class="percent fifteen" id="fifteen">15%</a>
+          <a href="#" onclick="selectPercent('t_five', 0.25)" class="percent t-five" id="t_five">25%</a>
+          <a href="#" onclick="selectPercent('fifty', 0.5)" class="percent fifty" id="fifty">50%</a>
           <div class="custom-tip">
             <input type="text" onclick="getCustom()" class="percent custom" id="custom_input" placeholder="Custom">
           </div>
         </div>
-        <p class="left-text no-of-people">Number of People</p>
+        <div class="peeps">
+          <p class="left-text no-of-people">Number of People</p>
+          <p class="message" id="msg"></p>
+        </div>
         <div class="text people">
           <img src="./images/icon-person.svg" alt="" class="icon">
           <input type="text" name="" class="input" id="people_input" placeholder="0">
@@ -69,6 +72,7 @@
 
   <script>
     "use strict";
+    //reseting on window refresh
     window.onload = function () {
       document.getElementById("people_input").value = "";
       document.getElementById("bill_input").value = "";
@@ -80,88 +84,42 @@
     let percent = 0;
     let isCustomOn = true;
 
-    function five() {
-      document.getElementById("five").style.backgroundColor = "hsl(172, 67%, 45%)";
-      document.getElementById("five").style.color = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.color = "white";
-      document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifteen").style.color = "white";
-      document.getElementById("t_five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("t_five").style.color = "white";
-      document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifty").style.color = "white";
-      percent = 0.05;
-      isCustomOn = false;
-    }
-    function ten() {
-      document.getElementById("ten").style.backgroundColor = "hsl(172, 67%, 45%)";
-      document.getElementById("ten").style.color = "hsl(183, 100%, 15%)";
-      document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("five").style.color = "white";
-      document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifteen").style.color = "white";
-      document.getElementById("t_five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("t_five").style.color = "white";
-      document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifty").style.color = "white";
-      percent = 0.1;
-      isCustomOn = false;
-    }
-    function fifteen() {
-      document.getElementById("fifteen").style.backgroundColor = "hsl(172, 67%, 45%)";
-      document.getElementById("fifteen").style.color = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.color = "white";
-      document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("five").style.color = "white";
-      document.getElementById("t_five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("t_five").style.color = "white";
-      document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifty").style.color = "white";
-      percent = 0.15;
-      isCustomOn = false;
-    }
-    function t_five() {
-      document.getElementById("t_five").style.backgroundColor = "hsl(172, 67%, 45%)";
-      document.getElementById("t_five").style.color = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.color = "white";
-      document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifteen").style.color = "white";
-      document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("five").style.color = "white";
-      document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifty").style.color = "white";
-      percent = 0.25;
+    //changing styles of percentage buttons
+    function selectPercent(id, percentValue) {
+      var navElements = document.querySelectorAll('.tips a');
+      navElements.forEach(function (navElement) {
+        navElement.style.backgroundColor = "hsl(183, 100%, 15%)";
+        navElement.style.color = "white";
+      });
+      document.getElementById(id).style.backgroundColor = "hsl(172, 67%, 45%)";
+      document.getElementById(id).style.color = "hsl(183, 100%, 15%)";
+      percent = percentValue;
       isCustomOn = false;
     }
 
-    function fifty() {
-      document.getElementById("fifty").style.backgroundColor = "hsl(172, 67%, 45%)";
-      document.getElementById("fifty").style.color = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("ten").style.color = "white";
-      document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("fifteen").style.color = "white";
-      document.getElementById("t_five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("t_five").style.color = "white";
-      document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-      document.getElementById("five").style.color = "white";
-      percent = 0.5;
-      isCustomOn = false;
-    }
-
-    let customValue;
+    //getting custom percentage
     function getCustom() {
       var navElements = document.querySelectorAll('.tips a');
       navElements.forEach(function (navElement) {
         navElement.style.backgroundColor = "hsl(183, 100%, 15%)";
         navElement.style.color = "white";
-      })
+      });
       isCustomOn = true;
     }
 
+    //for getting output by pressing enter on the percentages
+    var navElements = document.querySelectorAll('.tips a');
+    navElements.forEach(function (navElement) {
+      navElement.style.backgroundColor = "hsl(183, 100%, 15%)";
+      navElement.style.color = "white";
+      navElement.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          calculate();
+        }
+      });
+    });
+
+    //for getting output by pressing enter on any one textfield
     let peopleNo = document.getElementById("people_input");
     let bill = document.getElementById("bill_input");
     let custom = document.getElementById("custom_input");
@@ -177,10 +135,16 @@
     });
     peopleNo.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
+        let peopleValue = document.getElementById('people_input').value;
+        if (peopleValue != 0) {
+          document.getElementById("msg").textContent = "";
+        }
         calculate();
       }
     });
 
+    //output
+    let customValue;
     function calculate() {
       let billValue = document.getElementById('bill_input').value;
       let peopleValue = document.getElementById('people_input').value;
@@ -189,12 +153,10 @@
         percent = parseInt(customValue) * 0.01;
       }
       if (peopleValue == 0) {
-        alert("can't be zero");
+        document.getElementById("msg").textContent = "Can't be zero";
         return;
       }
-      else if (billValue == 0) {
-        return;
-      }
+      document.getElementById("msg").textContent = "";
       let tip_pp = (Number(billValue) * percent / Number(peopleValue)).toFixed(2);
       let total_pp = ((Number(billValue) * percent + Number(billValue)) / Number(peopleValue)).toFixed(2);
       document.getElementById("tip_pp").textContent = `$${tip_pp}`;
@@ -202,6 +164,7 @@
       document.getElementById("resets").style.backgroundColor = "hsl(172, 67%, 45%)";
     }
 
+    //hover over reset button
     function hover() {
       if (document.getElementById("total_pp").textContent != "$0.00") {
         document.getElementById("resets").style.backgroundColor = "hsl(185, 41%, 84%)";
@@ -214,6 +177,7 @@
       }
     }
 
+    //by clicking reset
     function refresh() {
       if (document.getElementById("total_pp").textContent != "$0.00") {
         document.getElementById("people_input").value = "";
