@@ -40,13 +40,12 @@ body{
 .container{
     position: absolute;
     inset: 0;
-    margin: auto;
+    margin: auto 22.5%;
     height: fit-content;
     block-size: fit-content;
-    width: 55%;
     border-radius: 1rem;
     background-color: white;
-    transition: width 1s;
+    transition: margin 1s;
 }
 
 .content{
@@ -67,6 +66,10 @@ body{
     background-color: var(--lg-cyan-2);
     border-radius: 5px;
     margin-top: 0;
+    box-sizing: border-box;
+}
+
+text{
     box-sizing: border-box;
 }
 
@@ -220,13 +223,12 @@ input[type=text]:focus {
         grid-template-columns: 1fr;
     }
     .container{
-        margin: 0;
         top: 15vh;
         bottom: 0;
     }
 }
 @media (max-width:970px){
     .container{
-        width: 100%;
+        margin: auto 0;
     }
 }
