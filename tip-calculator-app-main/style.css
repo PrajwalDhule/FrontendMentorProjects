@@ -40,12 +40,13 @@ body{
 .container{
     position: absolute;
     inset: 0;
-    margin: auto 22.5%;
+    margin: auto;
     height: fit-content;
     block-size: fit-content;
+    width: 55%;
     border-radius: 1rem;
     background-color: white;
-    transition: margin 1s;
+    transition: width 1s;
 }
 
 .content{
@@ -223,12 +224,13 @@ input[type=text]:focus {
         grid-template-columns: 1fr;
     }
     .container{
+        margin: 0;
         top: 15vh;
         bottom: 0;
     }
 }
 @media (max-width:970px){
     .container{
-        margin: auto 0;
+        width: 100%;
     }
 }
